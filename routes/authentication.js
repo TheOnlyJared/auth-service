@@ -3,8 +3,9 @@ const router = express.Router()
 
 // some middleware
 router.use((req, res, next) => {
-    console.log('Authentication request at: ', Date.now())
+    console.log('Authentication request at: ', new Date(Date.now()))
     console.log('Path: ', req.path)
+    console.log('Base URL: ', req.baseUrl)
 
     // TODO: some logic based on path
 
@@ -12,14 +13,14 @@ router.use((req, res, next) => {
 })
 
 // routes used
-router.post('forgot_password', (req, res) => {
+router.post('/forgot_password', (req, res) => {
     const { body } = req
 
     // TODO: some logic, send url to reset to user's email
     res.status(200).send('Still need to wire up logic')
 })
 
-router.post('sign_in', (req, res) => {
+router.post('/sign_in', (req, res) => {
     const { body } = req
     // const { fullName, password } = body
 
