@@ -22,7 +22,7 @@ router.post('/forgot_password', (req, res) => {
 
 router.post('/sign_in', (req, res) => {
     const { body } = req
-    // const { fullName, password } = body
+    // const { email, password } = body
 
     // TODO: some DB logic to match name and password
     res.status(200).send('Still need to wire up logic')
@@ -30,7 +30,7 @@ router.post('/sign_in', (req, res) => {
 
 router.post('/sign_up', (req, res) => {
     const { body } = req
-    // const { fullName, password } = body
+    // const { email, password } = body
 
     // TODO: some insert into DB logic
     res.status(200).send('Still need to wire up logic')
