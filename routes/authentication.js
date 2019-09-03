@@ -4,7 +4,10 @@ const router = express.Router()
 // some middleware
 router.use((req, res, next) => {
     console.log('Authentication request at: ', Date.now())
-    console.log('Some details: ', req)
+    console.log('Path: ', req.path)
+
+    // TODO: some logic based on path
+
     next()
 })
 
@@ -13,20 +16,23 @@ router.post('forgot_password', (req, res) => {
     const { body } = req
 
     // TODO: some logic, send url to reset to user's email
+    res.status(200).send('Still need to wire up logic')
 })
 
 router.post('sign_in', (req, res) => {
     const { body } = req
-    const { fullName, password } = body
+    // const { fullName, password } = body
 
     // TODO: some DB logic to match name and password
+    res.status(200).send('Still need to wire up logic')
 })
 
 router.post('/sign_up', (req, res) => {
     const { body } = req
-    const { fullName, password } = body
+    // const { fullName, password } = body
 
     // TODO: some insert into DB logic
+    res.status(200).send('Still need to wire up logic')
 })
 
 module.exports = router
